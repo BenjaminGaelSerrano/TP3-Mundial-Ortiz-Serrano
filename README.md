@@ -1,2 +1,3 @@
 # TP3-Mundial-Ortiz-Serrano
-trabajo practico de metodologia de desarrollo de videojuegos, tematica mundial.
+trabajo practico de metodologia de desarrollo de videojuegos, temática mundial.
+un juego de sigilo en el que el objetivo es secarle la nuca al chiqui (quien va a tener una barra de sudor) cuando se da vuelta y no estes en su rango de vision. Ahi te vas a poder acercar y tocar una tecla para secarle la nuca y bajarle la vida, si se da vuelta y te ve, te va a atacar con un pañuelo mojado y sacarte vida. Vas a tener que ocultarte y buscar el momento mas oportuno para secarle la nuca. El juego comtará con dos personajes jugables: Leandro Paredes y Angel Di María, Paredes hace más daño y Di María tiene más vida. El objetivo es secarle la nuca al chiqui hasta dejarsela seca
