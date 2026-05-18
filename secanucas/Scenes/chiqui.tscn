@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://nxlxg2rv84a0"]
 
 [ext_resource type="Texture2D" uid="uid://lhlv67r6cnqo" path="res://aassets/tapia.png" id="1_hiurh"]
-[ext_resource type="Texture2D" uid="uid://r63nbghx285" path="res://aassets/kenney_top-down-shooter/PNG/Tiles/tile_01.png" id="1_ufdlq"]
+[ext_resource type="Script" uid="uid://bj4vvmb3d0kqr" path="res://Scenes/chiqui.gd" id="1_ufdlq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ufdlq"]
 atlas = ExtResource("1_hiurh")
@@ -925,15 +925,14 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Chiqui" type="CharacterBody2D" unique_id=2023383264]
+[sub_resource type="CircleShape2D" id="CircleShape2D_ixtf7"]
+radius = 99.32774
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=1473565078]
-offset_right = 1153.0
-offset_bottom = 644.0
-texture = ExtResource("1_ufdlq")
+[node name="Chiqui" type="CharacterBody2D" unique_id=2023383264]
+position = Vector2(390, 205)
+script = ExtResource("1_ufdlq")
 
 [node name="Animacion" type="AnimatedSprite2D" parent="." unique_id=248080108]
-position = Vector2(390, 205)
 sprite_frames = SubResource("SpriteFrames_qxb7r")
 animation = &"Muerte"
 frame_progress = 0.9971953
@@ -943,3 +942,23 @@ frame_progress = 0.9971953
 [node name="HitboxArea" type="Area2D" parent="." unique_id=1933735635]
 
 [node name="Hitbox" type="CollisionShape2D" parent="HitboxArea" unique_id=1644717450]
+
+[node name="DetectorDeObstaculosFrente" type="RayCast2D" parent="." unique_id=616643457]
+target_position = Vector2(0, 194)
+
+[node name="DetectorDeObstaculosDerecha" type="RayCast2D" parent="." unique_id=1445428623]
+target_position = Vector2(198, 0)
+
+[node name="DetectorDeObstaculosIzquierda" type="RayCast2D" parent="." unique_id=1023376039]
+target_position = Vector2(-198, 0)
+
+[node name="ComprobadorParedDelanteJugador" type="RayCast2D" parent="." unique_id=1789905035]
+target_position = Vector2(0, 194)
+
+[node name="TimerVigilancia" type="Timer" parent="." unique_id=1896608935]
+
+[node name="VigilanciaArea" type="Area2D" parent="." unique_id=12168831]
+
+[node name="Vigilancia" type="CollisionShape2D" parent="VigilanciaArea" unique_id=927846277]
+position = Vector2(0, 95)
+shape = SubResource("CircleShape2D_ixtf7")
