@@ -934,8 +934,7 @@ script = ExtResource("1_ufdlq")
 
 [node name="Animacion" type="AnimatedSprite2D" parent="." unique_id=248080108]
 sprite_frames = SubResource("SpriteFrames_qxb7r")
-animation = &"Muerte"
-frame_progress = 0.9971953
+animation = &"AtacarAdelante"
 
 [node name="ColisionTapia" type="CollisionShape2D" parent="." unique_id=609971262]
 
