@@ -18,14 +18,15 @@ func _physics_process(delta: float) -> void:
 		if timer<=0.0:
 			estadoTapia=estado.QUIETO
 			timer=3.0
-			moverseAlAzar()
+			direccion= -direccion
 	elif estadoTapia==estado.QUIETO :
 		velocity=Vector2.ZERO
-		animacionQuieto()
+		animacionQuieto() 
 		timer-=delta
 		if timer<=0:
 			estadoTapia=estado.CAMINAR
 			timer=8.0
+			moverseAlAzar()
 func moverseAlAzar():
 	var movimientos= [Vector2.RIGHT,Vector2.DOWN,Vector2.LEFT,Vector2.UP]
 	direccion = movimientos.pick_random()			
