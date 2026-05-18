@@ -49,11 +49,14 @@ func animacionQuieto():
 		animacion.play("IzquierdaParado")						
 func esquivarParedes():
 	detectorCentro.target_position = direccion*40
-	detectorIzquierda.target_position= direccion.rotated(deg_to_rad(-35))*30
-	detectorDerecha.target_position= direccion.rotated(deg_to_rad(35))*30
+	detectorIzquierda.target_position= direccion.rotated(deg_to_rad(-90))*40
+	detectorDerecha.target_position= direccion.rotated(deg_to_rad(90))*40
+	detectorCentro.force_raycast_update()
+	detectorIzquierda.force_raycast_update()
+	detectorDerecha.force_raycast_update()
 	if detectorCentro.is_colliding():
-		direccion = direccion.rotated(deg_to_rad(90))
+		direccion = direccion.rotated(deg_to_rad(90)).round()
 	elif detectorIzquierda.is_colliding():
-		direccion = direccion.rotated(deg_to_rad(45))								
+		direccion = direccion.rotated(deg_to_rad(45)).round()								
 	elif detectorDerecha.is_colliding():
-		direccion = direccion.rotated(deg_to_rad(-45))
+		direccion = direccion.rotated(deg_to_rad(-45)).round()
