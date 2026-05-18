@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://nxlxg2rv84a0"]
 
 [ext_resource type="Texture2D" uid="uid://lhlv67r6cnqo" path="res://aassets/tapia.png" id="1_hiurh"]
-[ext_resource type="Script" uid="uid://bj4vvmb3d0kqr" path="res://Scenes/chiqui.gd" id="1_ufdlq"]
+[ext_resource type="Script" uid="uid://bj4vvmb3d0kqr" path="res://scripts/chiqui.gd" id="1_ufdlq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ufdlq"]
 atlas = ExtResource("1_hiurh")
