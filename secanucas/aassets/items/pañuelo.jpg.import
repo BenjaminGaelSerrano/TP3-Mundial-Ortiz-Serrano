@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://xlao7ubx1t8x"
-path="res://.godot/imported/noteretirefideo.png-df52e516c36be5180780d81edb120990.ctex"
+uid="uid://ovin63onii7q"
+path="res://.godot/imported/pañuelo.jpg-17d602a79d951550ef8e51fdb65b5a1b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://aassets/noteretirefideo.png"
-dest_files=["res://.godot/imported/noteretirefideo.png-df52e516c36be5180780d81edb120990.ctex"]
+source_file="res://aassets/items/pañuelo.jpg"
+dest_files=["res://.godot/imported/pañuelo.jpg-17d602a79d951550ef8e51fdb65b5a1b.ctex"]
 
 [params]
 

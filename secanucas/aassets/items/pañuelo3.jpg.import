@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dhmwxduokyi1v"
-path="res://.godot/imported/pañuelo3.jpg-edae7b347e0f343686149d05d169ba1a.ctex"
+path="res://.godot/imported/pañuelo3.jpg-55a63c51468db1315fd9e38a4b6aa652.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://aassets/pañuelo3.jpg"
-dest_files=["res://.godot/imported/pañuelo3.jpg-edae7b347e0f343686149d05d169ba1a.ctex"]
+source_file="res://aassets/items/pañuelo3.jpg"
+dest_files=["res://.godot/imported/pañuelo3.jpg-55a63c51468db1315fd9e38a4b6aa652.ctex"]
 
 [params]
 

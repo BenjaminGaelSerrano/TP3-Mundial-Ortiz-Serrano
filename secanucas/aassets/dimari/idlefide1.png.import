@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d06h57uevghkg"
-path="res://.godot/imported/pañuelo4.jpeg-da3fb370c263723577009fdc651c94b1.ctex"
+uid="uid://dsp1ub5vpnc53"
+path="res://.godot/imported/idlefide1.png-492cbc9a3b84a1f43962a976bbc9f628.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://aassets/pañuelo4.jpeg"
-dest_files=["res://.godot/imported/pañuelo4.jpeg-da3fb370c263723577009fdc651c94b1.ctex"]
+source_file="res://aassets/dimari/idlefide1.png"
+dest_files=["res://.godot/imported/idlefide1.png-492cbc9a3b84a1f43962a976bbc9f628.ctex"]
 
 [params]
 

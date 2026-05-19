@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bmctwim2g07ui"
-path="res://.godot/imported/pañuelo2.jpg-2d904476146ad0757fdfa5f274d34b11.ctex"
+uid="uid://cmm6kc10oo5pg"
+path="res://.godot/imported/corazones.png-080099a3523312c75658edbb6d23b640.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://aassets/pañuelo2.jpg"
-dest_files=["res://.godot/imported/pañuelo2.jpg-2d904476146ad0757fdfa5f274d34b11.ctex"]
+source_file="res://aassets/items/corazones.png"
+dest_files=["res://.godot/imported/corazones.png-080099a3523312c75658edbb6d23b640.ctex"]
 
 [params]
 
