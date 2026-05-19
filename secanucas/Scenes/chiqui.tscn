@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://lhlv67r6cnqo" path="res://aassets/tapia.png" id="1_hiurh"]
 [ext_resource type="Script" uid="uid://bj4vvmb3d0kqr" path="res://scripts/chiqui.gd" id="1_ufdlq"]
+[ext_resource type="Texture2D" uid="uid://cjfbxrvx01a44" path="res://aassets/istockphoto-1485576808-1024x1024.jpg" id="3_ixtf7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ufdlq"]
 atlas = ExtResource("1_hiurh")
@@ -925,8 +926,15 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_ufdlq"]
+radius = 23.0
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_ixtf7"]
-radius = 99.32774
+radius = 14.142136
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ixtf7"]
+radius = 28.0
+height = 168.0
 
 [node name="Chiqui" type="CharacterBody2D" unique_id=2023383264]
 position = Vector2(390, 205)
@@ -937,19 +945,22 @@ sprite_frames = SubResource("SpriteFrames_qxb7r")
 animation = &"AtacarAdelante"
 
 [node name="ColisionTapia" type="CollisionShape2D" parent="." unique_id=609971262]
+position = Vector2(0, 3)
+shape = SubResource("CircleShape2D_ufdlq")
 
 [node name="HitboxArea" type="Area2D" parent="." unique_id=1933735635]
 
 [node name="Hitbox" type="CollisionShape2D" parent="HitboxArea" unique_id=1644717450]
+shape = SubResource("CircleShape2D_ixtf7")
 
 [node name="DetectorDeObstaculosFrente" type="RayCast2D" parent="." unique_id=616643457]
-target_position = Vector2(0, 194)
+target_position = Vector2(0, 5)
 
 [node name="DetectorDeObstaculosDerecha" type="RayCast2D" parent="." unique_id=1445428623]
-target_position = Vector2(198, 0)
+target_position = Vector2(5, 0)
 
 [node name="DetectorDeObstaculosIzquierda" type="RayCast2D" parent="." unique_id=1023376039]
-target_position = Vector2(-198, 0)
+target_position = Vector2(-5, 0)
 
 [node name="ComprobadorParedDelanteJugador" type="RayCast2D" parent="." unique_id=1789905035]
 target_position = Vector2(0, 194)
@@ -959,5 +970,14 @@ target_position = Vector2(0, 194)
 [node name="VigilanciaArea" type="Area2D" parent="." unique_id=12168831]
 
 [node name="Vigilancia" type="CollisionShape2D" parent="VigilanciaArea" unique_id=927846277]
-position = Vector2(0, 95)
-shape = SubResource("CircleShape2D_ixtf7")
+position = Vector2(0, 84)
+shape = SubResource("CapsuleShape2D_ixtf7")
+
+[node name="FormaVigilancia" type="Polygon2D" parent="VigilanciaArea" unique_id=1044167390]
+color = Color(0.07058824, 0.09803922, 1, 0.6509804)
+texture = ExtResource("3_ixtf7")
+polygon = PackedVector2Array(0, 0, -64, 168, 67, 168)
+uv = PackedVector2Array(0, 0, -64, 168, 67, 168)
+
+[connection signal="body_entered" from="VigilanciaArea" to="." method="_on_vigilancia_area_body_entered"]
+[connection signal="body_exited" from="VigilanciaArea" to="." method="_on_vigilancia_area_body_exited"]
