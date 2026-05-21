@@ -1711,4 +1711,4 @@ tile_map_data = PackedByteArray("AABGAA4AAAAMAAMAAFBGAA8AAAAMAAMAAFBGABAAAAAMAAM
 tile_set = SubResource("TileSet_0ioig")
 
 [node name="Chiqui" parent="." unique_id=2023383264 instance=ExtResource("3_hwnlj")]
-position = Vector2(575, 277)
+position = Vector2(665, 280)
