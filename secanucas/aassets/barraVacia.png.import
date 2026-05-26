@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dpa01ujrejql0"
-path="res://.godot/imported/chori.png-b29393fd7b4e3bc9f300fff1efefe2c1.ctex"
+uid="uid://befmwm2rdlwow"
+path="res://.godot/imported/barraVacia.png-4b8ef861ace3f1b0157a136b94633c43.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://aassets/chori.png"
-dest_files=["res://.godot/imported/chori.png-b29393fd7b4e3bc9f300fff1efefe2c1.ctex"]
+source_file="res://aassets/barraVacia.png"
+dest_files=["res://.godot/imported/barraVacia.png-4b8ef861ace3f1b0157a136b94633c43.ctex"]
 
 [params]
 

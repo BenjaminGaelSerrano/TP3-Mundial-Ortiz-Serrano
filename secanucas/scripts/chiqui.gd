@@ -1,5 +1,5 @@
 extends CharacterBody2D
-enum estado {CAMINAR,QUIETO}
+enum estado {CAMINAR,QUIETO,PERSEGUIR}
 var estadoTapia= estado.CAMINAR
 const velocidad=180
 const vidaMax=300
@@ -8,6 +8,8 @@ var direccion= Vector2.RIGHT
 var timer
 var colorVigilanciaNormal=Color(0, 0.5, 1, 0.4)
 var colorVigilanciaAlerta=Color(1, 0, 0, 0.4)
+var jugador : Node2D
+var choripanCooldown=0.0
 const Choripan=preload("res://Scenes/chori.tscn")
 @onready var animacion= $Animacion
 @onready var detectorIzquierda= $DetectorDeObstaculosIzquierda
@@ -23,7 +25,7 @@ func _ready() -> void:
 	barraVida.value=vidaActual
 func _physics_process(delta: float) -> void:
 	poligono.rotation = direccion.angle()-PI/2
-	
+	nuca.position=-direccion * 16
 	if(estadoTapia==estado.CAMINAR):
 		esquivarParedes()
 		velocity= direccion*velocidad
@@ -41,12 +43,33 @@ func _physics_process(delta: float) -> void:
 		if timer<=0:
 			estadoTapia=estado.CAMINAR
 			timer=randf_range(3.5, 12.0)
-			
+	elif estadoTapia == estado.PERSEGUIR:
+		if jugador!= null:
+			direccion=(jugador.global_position - global_position).normalized()
+			velocity= direccion * (velocidad*1.5)
+			move_and_slide()
+			animacionCaminar()
+			choripanCooldown-=delta
+			if choripanCooldown<=0:
+				tirarChori()
+				choripanCooldown= 1.0		
 func tirarChori():
 	var chori = Choripan.instantiate()
 	chori.global_position = global_position 
 	chori.direccion = direccion 
 	get_parent().add_child(chori)
+	if direccion == Vector2.UP :
+		animacion.play("AtacarAtras")
+	elif direccion == Vector2.DOWN :
+		animacion.play("AtacarAdelante")
+	elif direccion == Vector2.RIGHT :
+		animacion.play("AtacarDerecha")
+	elif direccion == Vector2.LEFT :
+		animacion.play("AtacarIzquierda")
+func morir():
+	animacion.play("Muerte")
+	await animacion.animation_finished
+	queue_free()	
 func animacionCaminar():
 	if direccion == Vector2.UP :
 		animacion.play("CaminarAtras")
@@ -83,6 +106,17 @@ func esquivarParedes():
 func _on_vigilancia_area_body_entered(body: Node2D) -> void:
 	if body.name == "Jugador": 
 		poligono.color = colorVigilanciaAlerta
+		estadoTapia=estado.PERSEGUIR
+		jugador=body
 func _on_vigilancia_area_body_exited(body: Node2D) -> void:
 	if body.name == "Jugador":
 		poligono.color = colorVigilanciaNormal
+		estadoTapia=estado.PERSEGUIR
+		jugador=null
+func recinirdanioSecado(danio: float) -> void:
+	if nuca.is_in_group("pañuelos"):
+		vidaActual=vidaActual-danio
+		barraVida.value = vidaActual
+		if vidaActual<=0:
+			morir()
+		

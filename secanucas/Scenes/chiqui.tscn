@@ -3,6 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://lhlv67r6cnqo" path="res://aassets/tapia.png" id="1_hiurh"]
 [ext_resource type="Script" uid="uid://bj4vvmb3d0kqr" path="res://scripts/chiqui.gd" id="1_ufdlq"]
 [ext_resource type="Texture2D" uid="uid://cjfbxrvx01a44" path="res://aassets/istockphoto-1485576808-1024x1024.jpg" id="3_ixtf7"]
+[ext_resource type="Texture2D" uid="uid://befmwm2rdlwow" path="res://aassets/barraVacia.png" id="4_pmwgl"]
+[ext_resource type="Texture2D" uid="uid://bac0kh40oryj6" path="res://aassets/barraLlena.png" id="5_1wbtc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ufdlq"]
 atlas = ExtResource("1_hiurh")
@@ -980,9 +982,15 @@ polygon = PackedVector2Array(0, 0, -64, 168, 67, 168)
 uv = PackedVector2Array(0, 0, -64, 168, 67, 168)
 
 [node name="BarraVida" type="TextureProgressBar" parent="." unique_id=1029383301]
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = -47.0
+offset_top = -37.0
+offset_right = 7053.0
+offset_bottom = 2863.0
+scale = Vector2(0.06, 0.06)
 max_value = 300.0
+value = 300.0
+texture_under = ExtResource("4_pmwgl")
+texture_progress = ExtResource("5_1wbtc")
 
 [connection signal="body_entered" from="VigilanciaArea" to="." method="_on_vigilancia_area_body_entered"]
 [connection signal="body_exited" from="VigilanciaArea" to="." method="_on_vigilancia_area_body_exited"]
