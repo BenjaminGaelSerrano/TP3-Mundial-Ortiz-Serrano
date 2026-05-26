@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://cu8dgp55waj88"]
+
+[ext_resource type="Script" uid="uid://bptagu7kqv0vs" path="res://chori.gd" id="1_f55ex"]
+[ext_resource type="Texture2D" uid="uid://dpa01ujrejql0" path="res://aassets/Chori.png" id="2_l570h"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ntshe"]
+size = Vector2(24.739685, 14.045601)
+
+[node name="Chori" type="Area2D" unique_id=801336865]
+script = ExtResource("1_f55ex")
+
+[node name="ChoriTextura" type="Sprite2D" parent="." unique_id=572633720]
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("2_l570h")
+
+[node name="ChoriFisica" type="CollisionShape2D" parent="." unique_id=928493750]
+position = Vector2(0.240515, -1.0537645)
+rotation = -0.24958208
+shape = SubResource("RectangleShape2D_ntshe")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
