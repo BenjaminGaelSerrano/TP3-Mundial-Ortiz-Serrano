@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dpa01ujrejql0"
-path="res://.godot/imported/chori.png-b29393fd7b4e3bc9f300fff1efefe2c1.ctex"
+uid="uid://ci4c1jjm2xvjq"
+path="res://.godot/imported/Game-UI-Health-Bar-Transparent.png-c46c7ef4b3d34d2b81641c6ec845ffcd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://aassets/chori.png"
-dest_files=["res://.godot/imported/chori.png-b29393fd7b4e3bc9f300fff1efefe2c1.ctex"]
+source_file="res://aassets/Game-UI-Health-Bar-Transparent.png"
+dest_files=["res://.godot/imported/Game-UI-Health-Bar-Transparent.png-c46c7ef4b3d34d2b81641c6ec845ffcd.ctex"]
 
 [params]
 
