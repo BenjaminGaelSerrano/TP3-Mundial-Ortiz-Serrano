@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://bm40wrv3eeein"]
+
+[ext_resource type="Script" uid="uid://c66extvfj146b" path="res://scripts/item_pañuelo.gd" id="1_kdfi2"]
+[ext_resource type="Texture2D" uid="uid://b4gcwq0pvi03w" path="res://aassets/items/pañuelo1.png" id="1_v4684"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kdfi2"]
+radius = 35.014282
+
+[node name="ItemPañuelo" type="Area2D" unique_id=1537862339]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_kdfi2")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=33233106]
+position = Vector2(-11.500002, -11.499994)
+scale = Vector2(0.16322315, 0.18023257)
+texture = ExtResource("1_v4684")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1411862507]
+position = Vector2(-12, -13)
+shape = SubResource("CircleShape2D_kdfi2")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
