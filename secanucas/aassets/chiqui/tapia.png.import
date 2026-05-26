@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dhmwxduokyi1v"
-path="res://.godot/imported/pañuelo3.jpg-edae7b347e0f343686149d05d169ba1a.ctex"
+uid="uid://lhlv67r6cnqo"
+path="res://.godot/imported/tapia.png-fd40420abef8cf8b830d234c5da3bdc7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://aassets/pañuelo3.jpg"
-dest_files=["res://.godot/imported/pañuelo3.jpg-edae7b347e0f343686149d05d169ba1a.ctex"]
+source_file="res://aassets/chiqui/tapia.png"
+dest_files=["res://.godot/imported/tapia.png-fd40420abef8cf8b830d234c5da3bdc7.ctex"]
 
 [params]
 
@@ -37,4 +37,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=1
+detect_3d/compress_to=0

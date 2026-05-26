@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dpa01ujrejql0"
-path="res://.godot/imported/chori.png-b29393fd7b4e3bc9f300fff1efefe2c1.ctex"
+uid="uid://b4gcwq0pvi03w"
+path="res://.godot/imported/pañuelo1.png-50c8f35c44b29013f6f94997dd22e278.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://aassets/chori.png"
-dest_files=["res://.godot/imported/chori.png-b29393fd7b4e3bc9f300fff1efefe2c1.ctex"]
+source_file="res://aassets/items/pañuelo1.png"
+dest_files=["res://.godot/imported/pañuelo1.png-50c8f35c44b29013f6f94997dd22e278.ctex"]
 
 [params]
 
