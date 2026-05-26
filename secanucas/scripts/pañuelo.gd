@@ -16,10 +16,10 @@ func _ready() -> void:
 	pass
 func _process(delta: float) -> void:	
 	var paso= direction * velocidad * delta
-	position += paso 
+	position+=paso 
 	rotation=direction.angle()
-	distancia_recorrida += paso.length()
-	if distancia_recorrida >= distancia_maxima:
+	distancia_recorrida+=paso.length()
+	if distancia_recorrida>=distancia_maxima:
 		queue_free()
 
 
