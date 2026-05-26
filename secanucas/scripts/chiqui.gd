@@ -2,20 +2,28 @@ extends CharacterBody2D
 enum estado {CAMINAR,QUIETO}
 var estadoTapia= estado.CAMINAR
 const velocidad=180
+const vidaMax=300
+var vidaActual=300
 var direccion= Vector2.RIGHT
 var timer
 var colorVigilanciaNormal=Color(0, 0.5, 1, 0.4)
 var colorVigilanciaAlerta=Color(1, 0, 0, 0.4)
+const Choripan=preload("res://Scenes/chori.tscn")
 @onready var animacion= $Animacion
 @onready var detectorIzquierda= $DetectorDeObstaculosIzquierda
 @onready var detectorCentro= $DetectorDeObstaculosFrente
 @onready var detectorDerecha= $DetectorDeObstaculosDerecha
 @onready var poligono= $VigilanciaArea/FormaVigilancia
+@onready var barraVida= $BarraVida
+@onready var nuca= $HitboxArea/Hitbox
 func _ready() -> void:
 	timer=randf_range(3.5, 12.0)
 	poligono.color= colorVigilanciaNormal
+	barraVida.max_value=vidaMax
+	barraVida.value=vidaActual
 func _physics_process(delta: float) -> void:
 	poligono.rotation = direccion.angle()-PI/2
+	
 	if(estadoTapia==estado.CAMINAR):
 		esquivarParedes()
 		velocity= direccion*velocidad
@@ -33,9 +41,12 @@ func _physics_process(delta: float) -> void:
 		if timer<=0:
 			estadoTapia=estado.CAMINAR
 			timer=randf_range(3.5, 12.0)
-			moverseAlAzar()
-func moverseAlAzar():
-	pass		
+			
+func tirarChori():
+	var chori = Choripan.instantiate()
+	chori.global_position = global_position 
+	chori.direccion = direccion 
+	get_parent().add_child(chori)
 func animacionCaminar():
 	if direccion == Vector2.UP :
 		animacion.play("CaminarAtras")

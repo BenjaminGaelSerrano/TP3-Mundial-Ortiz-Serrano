@@ -979,5 +979,10 @@ texture = ExtResource("3_ixtf7")
 polygon = PackedVector2Array(0, 0, -64, 168, 67, 168)
 uv = PackedVector2Array(0, 0, -64, 168, 67, 168)
 
+[node name="BarraVida" type="TextureProgressBar" parent="." unique_id=1029383301]
+offset_right = 40.0
+offset_bottom = 40.0
+max_value = 300.0
+
 [connection signal="body_entered" from="VigilanciaArea" to="." method="_on_vigilancia_area_body_entered"]
 [connection signal="body_exited" from="VigilanciaArea" to="." method="_on_vigilancia_area_body_exited"]
