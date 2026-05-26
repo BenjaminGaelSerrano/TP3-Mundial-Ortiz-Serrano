@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://eqhg45r7qqes" path="res://aassets/kenney_top-down-shooter/Room_Builder_free_16x16.png" id="1_ecx5m"]
 [ext_resource type="Texture2D" uid="uid://pd0g4vj1qka0" path="res://aassets/Modern_Interiors_Free_v2.2/Modern tiles_Free/Interiors_free/16x16/Interiors_free_16x16.png" id="2_epurl"]
 [ext_resource type="PackedScene" uid="uid://nxlxg2rv84a0" path="res://Scenes/chiqui.tscn" id="3_hwnlj"]
-[ext_resource type="PackedScene" path="res://Scenes/fideo.tscn" id="4_epurl"]
+[ext_resource type="PackedScene" uid="uid://bojgoo7tvrnur" path="res://Scenes/fideo.tscn" id="4_epurl"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_eciuy"]
 texture = ExtResource("1_ecx5m")
@@ -1716,3 +1716,6 @@ position = Vector2(665, 280)
 
 [node name="Fideo" parent="." unique_id=1783322333 instance=ExtResource("4_epurl")]
 position = Vector2(73, 78)
+vida_maxima = 5
+velocidad = 150.0
+"daño" = 10

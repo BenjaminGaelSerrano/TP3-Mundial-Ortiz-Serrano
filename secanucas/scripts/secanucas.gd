@@ -12,7 +12,8 @@ signal vida_cambiada(nueva_vida: int)
 @onready var animacion=$AnimatedSprite2D
 var ultima_dir="abajo"
 var atacando: bool=false
-
+func _ready() -> void:
+	add_to_group("jugadores")
 func _physics_process(delta: float) -> void:
 	if atacando:
 		move_and_slide()
@@ -53,7 +54,7 @@ func atacar() -> void:
 	animacion.play("atacar_"+ultima_dir)
 	var proyectil=pañuelo.instantiate()
 	proyectil.global_position=global_position
-	proyectil.daño=daño 
+	proyectil.danioJugador=float(daño)
 	if ultima_dir == "arriba":
 		proyectil.direction=Vector2(0, -1)
 	elif ultima_dir == "abajo":
@@ -65,8 +66,5 @@ func atacar() -> void:
 	get_parent().add_child(proyectil)
 	await animacion.animation_finished
 	atacando = false
-
-
-
 func actualizar_animacion(estado: String) -> void:
 	animacion.play(estado+"_"+ultima_dir)#truquito para ahorrar ifs en esta func pero guarda con los nombrees en el animated sprite 
