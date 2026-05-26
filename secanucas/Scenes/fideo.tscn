@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://buvmggaki8dsu" path="res://aassets/dimari/test.png" id="2_jhuu4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_grh7v"]
-size = Vector2(27, 52)
+size = Vector2(32, 52)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_07jva"]
 atlas = ExtResource("2_jhuu4")
@@ -373,94 +373,94 @@ region = Rect2(320, 256, 64, 64)
 [sub_resource type="SpriteFrames" id="SpriteFrames_us8o8"]
 animations = [{
 "frames": [{
-"duration": 1.0,
+"duration": 0.6,
 "texture": SubResource("AtlasTexture_07jva")
 }, {
-"duration": 1.0,
+"duration": 0.7,
 "texture": SubResource("AtlasTexture_grh7v")
 }, {
-"duration": 1.0,
+"duration": 0.6,
 "texture": SubResource("AtlasTexture_oplnq")
 }, {
-"duration": 1.0,
+"duration": 0.7,
 "texture": SubResource("AtlasTexture_mipjr")
 }, {
-"duration": 1.0,
+"duration": 0.6,
 "texture": SubResource("AtlasTexture_ta735")
 }, {
-"duration": 1.0,
+"duration": 0.7,
 "texture": SubResource("AtlasTexture_qdh7u")
 }],
-"loop": true,
+"loop": false,
 "name": &"atacar_abajo",
 "speed": 5.0
 }, {
 "frames": [{
-"duration": 1.0,
+"duration": 0.6,
 "texture": SubResource("AtlasTexture_llpvp")
 }, {
-"duration": 1.0,
+"duration": 0.7,
 "texture": SubResource("AtlasTexture_pvwlv")
 }, {
-"duration": 1.0,
+"duration": 0.6,
 "texture": SubResource("AtlasTexture_o0xs2")
 }, {
-"duration": 1.0,
+"duration": 0.7,
 "texture": SubResource("AtlasTexture_d1jcm")
 }, {
-"duration": 1.0,
+"duration": 0.6,
 "texture": SubResource("AtlasTexture_qfeye")
 }, {
-"duration": 1.0,
+"duration": 0.7,
 "texture": SubResource("AtlasTexture_swcyb")
 }],
-"loop": true,
+"loop": false,
 "name": &"atacar_arriba",
 "speed": 5.0
 }, {
 "frames": [{
-"duration": 1.0,
+"duration": 0.6,
 "texture": SubResource("AtlasTexture_1af7s")
 }, {
-"duration": 1.0,
+"duration": 0.7,
 "texture": SubResource("AtlasTexture_5un6h")
 }, {
-"duration": 1.0,
+"duration": 0.6,
 "texture": SubResource("AtlasTexture_0rhlu")
 }, {
-"duration": 1.0,
+"duration": 0.7,
 "texture": SubResource("AtlasTexture_ct2wf")
 }, {
-"duration": 1.0,
+"duration": 0.6,
 "texture": SubResource("AtlasTexture_3jd28")
 }, {
-"duration": 1.0,
+"duration": 0.7,
 "texture": SubResource("AtlasTexture_m8qgf")
 }],
-"loop": true,
+"loop": false,
 "name": &"atacar_derecha",
 "speed": 5.0
 }, {
 "frames": [{
-"duration": 1.0,
+"duration": 0.6,
 "texture": SubResource("AtlasTexture_hwltb")
 }, {
-"duration": 1.0,
+"duration": 0.7,
 "texture": SubResource("AtlasTexture_dtkdu")
 }, {
-"duration": 1.0,
+"duration": 0.6,
 "texture": SubResource("AtlasTexture_rvvkj")
 }, {
-"duration": 1.0,
+"duration": 0.7,
 "texture": SubResource("AtlasTexture_1epao")
 }, {
-"duration": 1.0,
+"duration": 0.6,
 "texture": SubResource("AtlasTexture_ur3ad")
 }, {
-"duration": 1.0,
+"duration": 0.7,
 "texture": SubResource("AtlasTexture_wverp")
 }],
-"loop": true,
+"loop": false,
 "name": &"atacar_izquierda",
 "speed": 5.0
 }, {
@@ -717,14 +717,16 @@ animations = [{
 }]
 
 [node name="Fideo" type="CharacterBody2D" unique_id=1783322333]
+collision_layer = 2
+collision_mask = 5
 script = ExtResource("1_oplnq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=439949681]
-position = Vector2(-0.5, 0)
+position = Vector2(2, 0)
 shape = SubResource("RectangleShape2D_grh7v")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2085925937]
 position = Vector2(0, -1.9073486e-06)
 scale = Vector2(1.1369386, 1.0453664)
 sprite_frames = SubResource("SpriteFrames_us8o8")
-animation = &"caminar_derecha"
+animation = &"caminar_abajo"
