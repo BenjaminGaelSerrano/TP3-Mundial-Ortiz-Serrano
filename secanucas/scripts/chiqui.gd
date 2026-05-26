@@ -67,6 +67,7 @@ func tirarChori():
 	elif direccion == Vector2.LEFT :
 		animacion.play("AtacarIzquierda")
 func morir():
+	estadoTapia=estado.QUIETO
 	animacion.play("Muerte")
 	await animacion.animation_finished
 	queue_free()	
@@ -111,12 +112,11 @@ func _on_vigilancia_area_body_entered(body: Node2D) -> void:
 func _on_vigilancia_area_body_exited(body: Node2D) -> void:
 	if body.name == "Jugador":
 		poligono.color = colorVigilanciaNormal
-		estadoTapia=estado.PERSEGUIR
+		estadoTapia=estado.CAMINAR
 		jugador=null
 func recinirdanioSecado(danio: float) -> void:
-	if nuca.is_in_group("pañuelos"):
-		vidaActual=vidaActual-danio
-		barraVida.value = vidaActual
-		if vidaActual<=0:
-			morir()
+	vidaActual=vidaActual-danio
+	barraVida.value = vidaActual
+	if vidaActual<=0:
+		morir()
 		
