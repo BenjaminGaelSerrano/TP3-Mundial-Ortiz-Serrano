@@ -1,5 +1,5 @@
 extends CharacterBody2D
-enum estado {CAMINAR,QUIETO,PERSEGUIR}
+enum estado {CAMINAR,QUIETO,PERSEGUIR, MUERTO}
 var estadoTapia= estado.CAMINAR
 const velocidad=100
 const vidaMax=300
@@ -24,6 +24,8 @@ func _ready() -> void:
 	barraVida.max_value=vidaMax
 	barraVida.value=vidaActual
 func _physics_process(delta: float) -> void:
+	if estadoTapia==estado.MUERTO:
+		return
 	poligono.rotation = direccion.angle()-PI/2
 	nuca.position=-direccion * 16
 	if(estadoTapia==estado.CAMINAR):
@@ -72,10 +74,11 @@ func tirarChori():
 	elif direccion == Vector2.LEFT :
 		animacion.play("AtacarIzquierda")
 func morir():
-	estadoTapia=estado.QUIETO
+	estadoTapia = estado.MUERTO
+	velocity = Vector2.ZERO
 	animacion.play("Muerte")
 	await animacion.animation_finished
-	queue_free()	
+	queue_free()
 func animacionCaminar():
 	if direccion == Vector2.UP :
 		animacion.play("CaminarAtras")
@@ -111,7 +114,8 @@ func esquivarParedes():
 			direccion=-direccion.sign()	
 func recibir_daño(danio: int) -> void:
 	print("me secaron la nuca!", danio)
-	vidaActual=vidaActual-danio
+	vidaActual-=danio
+	print("vida actua:!", vidaActual)
 	barraVida.value = vidaActual
 	if vidaActual<=0:
 		morir()

@@ -22,6 +22,8 @@ func _on_body_entered(body: Node2D) -> void:
 	if body.has_method("recibir_daño"):
 		var danio_final = int(daño_jugador * multiplicador)
 		body.recibir_daño(danio_final)
+		if jugador_origen != null and jugador_origen.has_method("mojar_panuelo"):
+			jugador_origen.mojar_panuelo()
 		
 	
 	if body is TileMapLayer or body.has_method("recibir_daño"):

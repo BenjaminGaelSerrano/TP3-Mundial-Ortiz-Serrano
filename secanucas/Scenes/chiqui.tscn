@@ -897,9 +897,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_dwkqb")
 }],
-"loop": true,
+"loop": false,
 "name": &"Muerte",
-"speed": 5.0
+"speed": 4.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -945,7 +945,7 @@ script = ExtResource("1_ufdlq")
 
 [node name="Animacion" type="AnimatedSprite2D" parent="." unique_id=248080108]
 sprite_frames = SubResource("SpriteFrames_qxb7r")
-animation = &"AtacarAdelante"
+animation = &"Muerte"
 
 [node name="ColisionTapia" type="CollisionShape2D" parent="." unique_id=609971262]
 position = Vector2(0, 3)
