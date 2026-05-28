@@ -1,7 +1,7 @@
 extends CharacterBody2D
 enum estado {CAMINAR,QUIETO,PERSEGUIR}
 var estadoTapia= estado.CAMINAR
-const velocidad=180
+const velocidad=100
 const vidaMax=300
 var vidaActual=300
 var direccion= Vector2.RIGHT
@@ -45,14 +45,19 @@ func _physics_process(delta: float) -> void:
 			timer=randf_range(3.5, 12.0)
 	elif estadoTapia == estado.PERSEGUIR:
 		if jugador!= null:
-			direccion=(jugador.global_position - global_position).normalized()
+			var dirLibre=(jugador.global_position - global_position).normalized()
+			if abs(dirLibre.x) > abs(dirLibre.y):
+				direccion = Vector2(sign(dirLibre.x), 0)
+			else:
+				direccion = Vector2(0, sign(dirLibre.y))
 			velocity= direccion * (velocidad*1.5)
 			move_and_slide()
-			animacionCaminar()
 			choripanCooldown-=delta
 			if choripanCooldown<=0:
 				tirarChori()
-				choripanCooldown= 1.0		
+				choripanCooldown= 1.0
+			else: 
+				animacionCaminar()			
 func tirarChori():
 	var chori = Choripan.instantiate()
 	chori.global_position = global_position 
@@ -67,6 +72,7 @@ func tirarChori():
 	elif direccion == Vector2.LEFT :
 		animacion.play("AtacarIzquierda")
 func morir():
+	estadoTapia=estado.QUIETO
 	animacion.play("Muerte")
 	await animacion.animation_finished
 	queue_free()	
@@ -103,20 +109,20 @@ func esquivarParedes():
 			direccion = Vector2(direccion.y, -direccion.x).sign()
 		else :
 			direccion=-direccion.sign()	
+func recibirdanioSecado(danio: float) -> void:
+	print("¡Recibí daño!: ", danio)
+	vidaActual=vidaActual-danio
+	barraVida.value = vidaActual
+	if vidaActual<=0:
+		morir()
 func _on_vigilancia_area_body_entered(body: Node2D) -> void:
-	if body.name == "Jugador": 
+	if body.is_in_group("jugadores"): 
 		poligono.color = colorVigilanciaAlerta
 		estadoTapia=estado.PERSEGUIR
 		jugador=body
+		choripanCooldown = 1.0 
 func _on_vigilancia_area_body_exited(body: Node2D) -> void:
-	if body.name == "Jugador":
+	if body.is_in_group("jugadores"): 
 		poligono.color = colorVigilanciaNormal
-		estadoTapia=estado.PERSEGUIR
-		jugador=null
-func recinirdanioSecado(danio: float) -> void:
-	if nuca.is_in_group("pañuelos"):
-		vidaActual=vidaActual-danio
-		barraVida.value = vidaActual
-		if vidaActual<=0:
-			morir()
-		
+		estadoTapia=estado.CAMINAR
+		jugador=null		

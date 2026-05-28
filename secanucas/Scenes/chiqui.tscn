@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://nxlxg2rv84a0"]
 
-[ext_resource type="Texture2D" uid="uid://lhlv67r6cnqo" path="res://aassets/tapia.png" id="1_hiurh"]
+[ext_resource type="Texture2D" uid="uid://lhlv67r6cnqo" path="res://aassets/chiqui/tapia.png" id="1_hiurh"]
 [ext_resource type="Script" uid="uid://bj4vvmb3d0kqr" path="res://scripts/chiqui.gd" id="1_ufdlq"]
 [ext_resource type="Texture2D" uid="uid://cjfbxrvx01a44" path="res://aassets/istockphoto-1485576808-1024x1024.jpg" id="3_ixtf7"]
 [ext_resource type="Texture2D" uid="uid://befmwm2rdlwow" path="res://aassets/barraVacia.png" id="4_pmwgl"]
@@ -932,7 +932,7 @@ animations = [{
 radius = 11.18034
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ixtf7"]
-radius = 14.142136
+radius = 13.928389
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ixtf7"]
 radius = 28.0
@@ -940,6 +940,7 @@ height = 168.0
 
 [node name="Chiqui" type="CharacterBody2D" unique_id=2023383264]
 position = Vector2(390, 205)
+collision_layer = 4
 script = ExtResource("1_ufdlq")
 
 [node name="Animacion" type="AnimatedSprite2D" parent="." unique_id=248080108]
@@ -951,6 +952,8 @@ position = Vector2(0, 3)
 shape = SubResource("CircleShape2D_ufdlq")
 
 [node name="HitboxArea" type="Area2D" parent="." unique_id=1933735635]
+collision_layer = 8
+collision_mask = 17
 
 [node name="Hitbox" type="CollisionShape2D" parent="HitboxArea" unique_id=1644717450]
 shape = SubResource("CircleShape2D_ixtf7")
@@ -970,6 +973,8 @@ target_position = Vector2(0, 194)
 [node name="TimerVigilancia" type="Timer" parent="." unique_id=1896608935]
 
 [node name="VigilanciaArea" type="Area2D" parent="." unique_id=12168831]
+collision_layer = 0
+collision_mask = 2
 
 [node name="Vigilancia" type="CollisionShape2D" parent="VigilanciaArea" unique_id=927846277]
 position = Vector2(0, 84)

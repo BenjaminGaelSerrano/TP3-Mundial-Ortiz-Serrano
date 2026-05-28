@@ -18,18 +18,17 @@ var tiempo_secado_p_equipado: float=0.0
 var usos_actuales: int=0
 
 func _ready() -> void:
+	add_to_group("jugadores")
 	if escenapañuelo:
 		equipar_pañuelo(escenapañuelo)
-
+	
 func equipar_pañuelo(nueva_escena: PackedScene) -> void:
 	escenapañuelo = nueva_escena
 	var pañueloaux = escenapañuelo.instantiate()
 	usos_maximos_p_equipado = pañueloaux.usos_maximos
 	tiempo_secado_p_equipado = pañueloaux.tiempo_secado
-	
 	pañueloaux.queue_free()
 	usos_actuales = usos_maximos_p_equipado
-
 func _physics_process(delta: float) -> void:
 	if atacando or secando:
 		move_and_slide()
@@ -78,6 +77,7 @@ func atacar() -> void:
 	var pañueloactual=escenapañuelo.instantiate()
 	pañueloactual.global_position=global_position
 	pañueloactual.daño_jugador = daño
+	pañueloactual.danioJugador = float(daño)
 	pañueloactual.jugador_origen=self
 	if ultima_dir == "arriba":
 		pañueloactual.direction=Vector2(0, -1)
@@ -95,7 +95,6 @@ func mojar_panuelo() -> void:
 	usos_actuales-=1
 	if usos_actuales<=0:
 		print("se mojo el pañuelo, se lleno de lagrimas mde gente que le duele qatar, estaa locuraaa!!")
-
 func actualizar_animacion(estado: String) -> void:
 	animacion.play(estado+"_"+ultima_dir)#truquito para ahorrar ifs en esta func pero guarda con los nombrees en el animated sprite 
 
