@@ -23,17 +23,19 @@ func _on_body_entered(body: Node2D) -> void:
 		var danio_final = int(daño_jugador * multiplicador)
 		body.recibir_daño(danio_final)
 		
-	if jugador_origen!=null and jugador_origen.has_method("mojar_panuelo"):
-		jugador_origen.mojar_panuelo()
+	
 	if body is TileMapLayer or body.has_method("recibir_daño"):
 		queue_free()
+
 func calcularDanio():
 	if daño_jugador != 0:
 		return float(daño_jugador) * multiplicador
 	return danioJugador * multiplicador
 func _on_area_entered(area: Area2D) -> void:
-	if area.name == "HitboxArea": 
+	if area.name == "HitboxArea":
 		var enemigo = area.get_parent()
-		if enemigo.has_method("recibirdanioSecado"):
-			enemigo.recibirdanioSecado(calcularDanio())
+		if enemigo.has_method("recibir_daño"):
+			enemigo.recibir_daño(calcularDanio())
+			if jugador_origen != null and jugador_origen.has_method("mojar_panuelo"):
+				jugador_origen.mojar_panuelo()
 			queue_free()

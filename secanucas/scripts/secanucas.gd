@@ -57,6 +57,7 @@ func recibir_daño(dañorecibido: int) -> void:
 	if vidas<=0:
 		#por ahora no hay escena de muerte
 		#get_tree().change_scene_to_file("res://escenas/muerte.tscn")
+		print("me empache de choris ")
 		queue_free()
 
 func _input(event: InputEvent) -> void:

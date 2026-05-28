@@ -109,12 +109,13 @@ func esquivarParedes():
 			direccion = Vector2(direccion.y, -direccion.x).sign()
 		else :
 			direccion=-direccion.sign()	
-func recibirdanioSecado(danio: float) -> void:
-	print("¡Recibí daño!: ", danio)
+func recibir_daño(danio: int) -> void:
+	print("me secaron la nuca!", danio)
 	vidaActual=vidaActual-danio
 	barraVida.value = vidaActual
 	if vidaActual<=0:
 		morir()
+		
 func _on_vigilancia_area_body_entered(body: Node2D) -> void:
 	if body.is_in_group("jugadores"): 
 		poligono.color = colorVigilanciaAlerta

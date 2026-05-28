@@ -7,7 +7,7 @@
 
 [node name="pañuelo1" type="Area2D" unique_id=1875602740]
 collision_layer = 13
-collision_mask = 4096
+collision_mask = 4101
 script = ExtResource("1_0f2w7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2008663868]
