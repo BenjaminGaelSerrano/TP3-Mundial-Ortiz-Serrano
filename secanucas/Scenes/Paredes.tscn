@@ -1,0 +1,102 @@
+[gd_scene format=3 uid="uid://c38ddxon6dtxu"]
+
+[ext_resource type="Script" uid="uid://hpas43gwm4s3" path="res://scripts/secanucas.gd" id="1_8bslg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_grh7v"]
+size = Vector2(32, 52)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_us8o8"]
+animations = [{
+"frames": [],
+"loop": false,
+"name": &"atacar_abajo",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": false,
+"name": &"atacar_arriba",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": false,
+"name": &"atacar_derecha",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": false,
+"name": &"atacar_izquierda",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"caminar_abajo",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"caminar_arriba",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"caminar_derecha",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"caminar_izquierda",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"derribado",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"muerte",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"parado_abajo",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"parado_arriba",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"parado_derecha",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"parado_izquierda",
+"speed": 20.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"secar",
+"speed": 5.0
+}]
+
+[node name="Paredes" type="CharacterBody2D" unique_id=1783322333]
+collision_layer = 2
+collision_mask = 5
+script = ExtResource("1_8bslg")
+vida_maxima = 6
+velocidad = 100.0
+"daño" = 15
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=439949681]
+position = Vector2(2, 0)
+shape = SubResource("RectangleShape2D_grh7v")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2085925937]
+position = Vector2(0, -1.9073486e-06)
+scale = Vector2(1.1369386, 1.0453664)
+sprite_frames = SubResource("SpriteFrames_us8o8")
+animation = &"atacar_abajo"

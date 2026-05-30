@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://dw1f5h83ra543"]
+
+[ext_resource type="Script" uid="uid://b8v1ncavo00ca" path="res://scripts/menu_seleccion.gd" id="1_4hfja"]
+
+[node name="MenuSeleccion" type="Control" unique_id=2133260971]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 472.0
+offset_top = 472.0
+offset_right = -456.0
+offset_bottom = -136.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4hfja")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=180434854]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.98700005
+anchor_bottom = 0.95000005
+offset_left = 2.0
+offset_right = -0.088012695
+
+[node name="BotonFideo" type="Button" parent="HBoxContainer" unique_id=949590145]
+layout_mode = 2
+text = "Elegir Fideo"
+
+[node name="BotonParedes" type="Button" parent="HBoxContainer" unique_id=998567489]
+layout_mode = 2
+text = "Elegir Paredes"

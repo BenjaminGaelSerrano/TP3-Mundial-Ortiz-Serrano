@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="secanucas"
-run/main_scene="uid://nxlxg2rv84a0"
+run/main_scene="uid://dw1f5h83ra543"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Global="*uid://bjqesqlwetsxa"
 
 [input]
 
