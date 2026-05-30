@@ -934,9 +934,8 @@ radius = 11.18034
 [sub_resource type="CircleShape2D" id="CircleShape2D_ixtf7"]
 radius = 13.928389
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ixtf7"]
-radius = 28.0
-height = 168.0
+[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_pmwgl"]
+points = PackedVector2Array(0, 0, -64, 168, 67, 168)
 
 [node name="Chiqui" type="CharacterBody2D" unique_id=2023383264]
 position = Vector2(390, 205)
@@ -977,8 +976,7 @@ collision_layer = 0
 collision_mask = 2
 
 [node name="Vigilancia" type="CollisionShape2D" parent="VigilanciaArea" unique_id=927846277]
-position = Vector2(0, 84)
-shape = SubResource("CapsuleShape2D_ixtf7")
+shape = SubResource("ConvexPolygonShape2D_pmwgl")
 
 [node name="FormaVigilancia" type="Polygon2D" parent="VigilanciaArea" unique_id=1044167390]
 color = Color(0.07058824, 0.09803922, 1, 0.6509804)
@@ -992,8 +990,8 @@ offset_top = -37.0
 offset_right = 7053.0
 offset_bottom = 2863.0
 scale = Vector2(0.06, 0.06)
-max_value = 300.0
-value = 300.0
+max_value = 500.0
+value = 500.0
 texture_under = ExtResource("4_pmwgl")
 texture_progress = ExtResource("5_1wbtc")
 

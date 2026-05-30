@@ -1,9 +1,9 @@
 extends CharacterBody2D
 enum estado {CAMINAR,QUIETO,PERSEGUIR, MUERTO}
 var estadoTapia= estado.CAMINAR
-const velocidad=100
-const vidaMax=300
-var vidaActual=300
+const velocidad=120
+const vidaMax=500
+var vidaActual=500
 var direccion= Vector2.RIGHT
 var timer
 var colorVigilanciaNormal=Color(0, 0.5, 1, 0.4)
@@ -16,6 +16,7 @@ const Choripan=preload("res://Scenes/chori.tscn")
 @onready var detectorCentro= $DetectorDeObstaculosFrente
 @onready var detectorDerecha= $DetectorDeObstaculosDerecha
 @onready var poligono= $VigilanciaArea/FormaVigilancia
+@onready var formaPoligono =$VigilanciaArea/Vigilancia
 @onready var barraVida= $BarraVida
 @onready var nuca= $HitboxArea/Hitbox
 func _ready() -> void:
@@ -27,6 +28,7 @@ func _physics_process(delta: float) -> void:
 	if estadoTapia==estado.MUERTO:
 		return
 	poligono.rotation = direccion.angle()-PI/2
+	formaPoligono.rotation= direccion.angle()-PI/2
 	nuca.position=-direccion * 16
 	if(estadoTapia==estado.CAMINAR):
 		esquivarParedes()
@@ -52,17 +54,17 @@ func _physics_process(delta: float) -> void:
 				direccion = Vector2(sign(dirLibre.x), 0)
 			else:
 				direccion = Vector2(0, sign(dirLibre.y))
-			velocity= direccion * (velocidad*1.5)
+			velocity= direccion * (velocidad*1.2)
 			move_and_slide()
 			choripanCooldown-=delta
 			if choripanCooldown<=0:
 				tirarChori()
-				choripanCooldown= 1.0
+				choripanCooldown= 0.5
 			else: 
 				animacionCaminar()			
 func tirarChori():
 	var chori = Choripan.instantiate()
-	chori.global_position = global_position 
+	chori.global_position = global_position + direccion * 24
 	chori.direccion = direccion 
 	get_parent().add_child(chori)
 	if direccion == Vector2.UP :
@@ -121,7 +123,7 @@ func recibir_daño(danio: int) -> void:
 		morir()
 		
 func _on_vigilancia_area_body_entered(body: Node2D) -> void:
-	if body.is_in_group("jugadores"): 
+	if body.is_in_group("jugadores"):
 		poligono.color = colorVigilanciaAlerta
 		estadoTapia=estado.PERSEGUIR
 		jugador=body

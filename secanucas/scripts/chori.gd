@@ -1,5 +1,5 @@
 extends Area2D
-const velocidad=200
+const velocidad=350
 var direccion = Vector2.ZERO
 var danio=10
 func _physics_process(delta: float) -> void:
