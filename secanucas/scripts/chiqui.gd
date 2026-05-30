@@ -1,9 +1,9 @@
 extends CharacterBody2D
-enum estado {CAMINAR,QUIETO,PERSEGUIR}
+enum estado {CAMINAR,QUIETO,PERSEGUIR, MUERTO}
 var estadoTapia= estado.CAMINAR
-const velocidad=180
-const vidaMax=300
-var vidaActual=300
+const velocidad=120
+const vidaMax=500
+var vidaActual=500
 var direccion= Vector2.RIGHT
 var timer
 var colorVigilanciaNormal=Color(0, 0.5, 1, 0.4)
@@ -16,6 +16,7 @@ const Choripan=preload("res://Scenes/chori.tscn")
 @onready var detectorCentro= $DetectorDeObstaculosFrente
 @onready var detectorDerecha= $DetectorDeObstaculosDerecha
 @onready var poligono= $VigilanciaArea/FormaVigilancia
+@onready var formaPoligono =$VigilanciaArea/Vigilancia
 @onready var barraVida= $BarraVida
 @onready var nuca= $HitboxArea/Hitbox
 func _ready() -> void:
@@ -24,7 +25,10 @@ func _ready() -> void:
 	barraVida.max_value=vidaMax
 	barraVida.value=vidaActual
 func _physics_process(delta: float) -> void:
+	if estadoTapia==estado.MUERTO:
+		return
 	poligono.rotation = direccion.angle()-PI/2
+	formaPoligono.rotation= direccion.angle()-PI/2
 	nuca.position=-direccion * 16
 	if(estadoTapia==estado.CAMINAR):
 		esquivarParedes()
@@ -45,17 +49,22 @@ func _physics_process(delta: float) -> void:
 			timer=randf_range(3.5, 12.0)
 	elif estadoTapia == estado.PERSEGUIR:
 		if jugador!= null:
-			direccion=(jugador.global_position - global_position).normalized()
-			velocity= direccion * (velocidad*1.5)
+			var dirLibre=(jugador.global_position - global_position).normalized()
+			if abs(dirLibre.x) > abs(dirLibre.y):
+				direccion = Vector2(sign(dirLibre.x), 0)
+			else:
+				direccion = Vector2(0, sign(dirLibre.y))
+			velocity= direccion * (velocidad*1.2)
 			move_and_slide()
-			animacionCaminar()
 			choripanCooldown-=delta
 			if choripanCooldown<=0:
 				tirarChori()
-				choripanCooldown= 1.0		
+				choripanCooldown= 0.5
+			else: 
+				animacionCaminar()			
 func tirarChori():
 	var chori = Choripan.instantiate()
-	chori.global_position = global_position 
+	chori.global_position = global_position + direccion * 24
 	chori.direccion = direccion 
 	get_parent().add_child(chori)
 	if direccion == Vector2.UP :
@@ -67,9 +76,11 @@ func tirarChori():
 	elif direccion == Vector2.LEFT :
 		animacion.play("AtacarIzquierda")
 func morir():
+	estadoTapia = estado.MUERTO
+	velocity = Vector2.ZERO
 	animacion.play("Muerte")
 	await animacion.animation_finished
-	queue_free()	
+	queue_free()
 func animacionCaminar():
 	if direccion == Vector2.UP :
 		animacion.play("CaminarAtras")
@@ -103,20 +114,22 @@ func esquivarParedes():
 			direccion = Vector2(direccion.y, -direccion.x).sign()
 		else :
 			direccion=-direccion.sign()	
+func recibir_daño(danio: int) -> void:
+	print("me secaron la nuca!", danio)
+	vidaActual-=danio
+	print("vida actua:!", vidaActual)
+	barraVida.value = vidaActual
+	if vidaActual<=0:
+		morir()
+		
 func _on_vigilancia_area_body_entered(body: Node2D) -> void:
-	if body.name == "Jugador": 
+	if body.is_in_group("jugadores"):
 		poligono.color = colorVigilanciaAlerta
 		estadoTapia=estado.PERSEGUIR
 		jugador=body
+		choripanCooldown = 1.0 
 func _on_vigilancia_area_body_exited(body: Node2D) -> void:
-	if body.name == "Jugador":
+	if body.is_in_group("jugadores"): 
 		poligono.color = colorVigilanciaNormal
-		estadoTapia=estado.PERSEGUIR
-		jugador=null
-func recinirdanioSecado(danio: float) -> void:
-	if nuca.is_in_group("pañuelos"):
-		vidaActual=vidaActual-danio
-		barraVida.value = vidaActual
-		if vidaActual<=0:
-			morir()
-		
+		estadoTapia=estado.CAMINAR
+		jugador=null		

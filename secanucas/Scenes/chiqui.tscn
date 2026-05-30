@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://nxlxg2rv84a0"]
 
-[ext_resource type="Texture2D" uid="uid://lhlv67r6cnqo" path="res://aassets/tapia.png" id="1_hiurh"]
+[ext_resource type="Texture2D" uid="uid://lhlv67r6cnqo" path="res://aassets/chiqui/tapia.png" id="1_hiurh"]
 [ext_resource type="Script" uid="uid://bj4vvmb3d0kqr" path="res://scripts/chiqui.gd" id="1_ufdlq"]
 [ext_resource type="Texture2D" uid="uid://cjfbxrvx01a44" path="res://aassets/istockphoto-1485576808-1024x1024.jpg" id="3_ixtf7"]
 [ext_resource type="Texture2D" uid="uid://befmwm2rdlwow" path="res://aassets/barraVacia.png" id="4_pmwgl"]
@@ -897,9 +897,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_dwkqb")
 }],
-"loop": true,
+"loop": false,
 "name": &"Muerte",
-"speed": 5.0
+"speed": 4.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -932,25 +932,27 @@ animations = [{
 radius = 11.18034
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ixtf7"]
-radius = 14.142136
+radius = 13.928389
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ixtf7"]
-radius = 28.0
-height = 168.0
+[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_pmwgl"]
+points = PackedVector2Array(0, 0, -64, 168, 67, 168)
 
 [node name="Chiqui" type="CharacterBody2D" unique_id=2023383264]
 position = Vector2(390, 205)
+collision_layer = 4
 script = ExtResource("1_ufdlq")
 
 [node name="Animacion" type="AnimatedSprite2D" parent="." unique_id=248080108]
 sprite_frames = SubResource("SpriteFrames_qxb7r")
-animation = &"AtacarAdelante"
+animation = &"Muerte"
 
 [node name="ColisionTapia" type="CollisionShape2D" parent="." unique_id=609971262]
 position = Vector2(0, 3)
 shape = SubResource("CircleShape2D_ufdlq")
 
 [node name="HitboxArea" type="Area2D" parent="." unique_id=1933735635]
+collision_layer = 8
+collision_mask = 17
 
 [node name="Hitbox" type="CollisionShape2D" parent="HitboxArea" unique_id=1644717450]
 shape = SubResource("CircleShape2D_ixtf7")
@@ -970,10 +972,11 @@ target_position = Vector2(0, 194)
 [node name="TimerVigilancia" type="Timer" parent="." unique_id=1896608935]
 
 [node name="VigilanciaArea" type="Area2D" parent="." unique_id=12168831]
+collision_layer = 0
+collision_mask = 2
 
 [node name="Vigilancia" type="CollisionShape2D" parent="VigilanciaArea" unique_id=927846277]
-position = Vector2(0, 84)
-shape = SubResource("CapsuleShape2D_ixtf7")
+shape = SubResource("ConvexPolygonShape2D_pmwgl")
 
 [node name="FormaVigilancia" type="Polygon2D" parent="VigilanciaArea" unique_id=1044167390]
 color = Color(0.07058824, 0.09803922, 1, 0.6509804)
@@ -987,8 +990,8 @@ offset_top = -37.0
 offset_right = 7053.0
 offset_bottom = 2863.0
 scale = Vector2(0.06, 0.06)
-max_value = 300.0
-value = 300.0
+max_value = 500.0
+value = 500.0
 texture_under = ExtResource("4_pmwgl")
 texture_progress = ExtResource("5_1wbtc")
 

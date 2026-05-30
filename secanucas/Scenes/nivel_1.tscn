@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bm40wrv3eeein" path="res://Scenes/item_pañuelo.tscn" id="3_jmhww"]
 [ext_resource type="PackedScene" uid="uid://det28s1inbqeq" path="res://Scenes/pañuelo_1.tscn" id="4_22i05"]
 [ext_resource type="PackedScene" uid="uid://dbuervyixhvuq" path="res://Scenes/hud.tscn" id="4_kyajb"]
+[ext_resource type="PackedScene" uid="uid://bojgoo7tvrnur" path="res://Scenes/fideo.tscn" id="4_epurl"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_eciuy"]
 texture = ExtResource("1_ecx5m")
@@ -1720,6 +1721,11 @@ tile_set = SubResource("TileSet_0ioig")
 [node name="ItemPañuelo" parent="." unique_id=1537862339 instance=ExtResource("3_jmhww")]
 position = Vector2(67, 371)
 "pañuelo_que_contiene" = ExtResource("4_22i05")
+
+[node name="Fideo" parent="." unique_id=1783322333 instance=ExtResource("4_epurl")]
+position = Vector2(85, 102)
+velocidad = 200.0
+"daño" = 50
 
 [node name="Chiqui" parent="." unique_id=2023383264 instance=ExtResource("3_hwnlj")]
 position = Vector2(665, 280)
