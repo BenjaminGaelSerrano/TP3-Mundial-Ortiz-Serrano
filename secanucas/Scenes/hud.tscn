@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://dbuervyixhvuq"]
+
+[ext_resource type="Script" uid="uid://dpjcqneh6atc2" path="res://hud.gd" id="1_fccik"]
+[ext_resource type="Texture2D" uid="uid://bjomngwgekeqe" path="res://aassets/items/coras.png" id="2_bjfho"]
+
+[node name="HUD" type="CanvasLayer" unique_id=464219067]
+script = ExtResource("1_fccik")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1169805388]
+offset_left = 8.0
+offset_top = 23.0
+offset_right = 256.0
+offset_bottom = 57.0
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer" unique_id=1942971059]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_vertical = 0
+texture = ExtResource("2_bjfho")
+expand_mode = 1
+
+[node name="TextureRect2" type="TextureRect" parent="HBoxContainer" unique_id=1358939216]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_vertical = 0
+texture = ExtResource("2_bjfho")
+expand_mode = 1
+
+[node name="TextureRect3" type="TextureRect" parent="HBoxContainer" unique_id=239989433]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_vertical = 0
+texture = ExtResource("2_bjfho")
+expand_mode = 1
+
+[node name="TextureRect4" type="TextureRect" parent="HBoxContainer" unique_id=452396557]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_vertical = 0
+texture = ExtResource("2_bjfho")
+expand_mode = 1
+
+[node name="TextureRect5" type="TextureRect" parent="HBoxContainer" unique_id=806540486]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_vertical = 0
+texture = ExtResource("2_bjfho")
+expand_mode = 1
+
+[node name="TextureRect6" type="TextureRect" parent="HBoxContainer" unique_id=680543246]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_vertical = 0
+texture = ExtResource("2_bjfho")
+expand_mode = 1
+
+[node name="TextureRect7" type="TextureRect" parent="HBoxContainer" unique_id=1335377707]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_vertical = 0
+texture = ExtResource("2_bjfho")
+expand_mode = 1

@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://dw1f5h83ra543"]
 
 [ext_resource type="Script" uid="uid://b8v1ncavo00ca" path="res://scripts/menu_seleccion.gd" id="1_4hfja"]
+[ext_resource type="Texture2D" uid="uid://bqfd5y3ktd88b" path="res://aassets/parede/14972840625600369804.jpg" id="2_t5d8f"]
+[ext_resource type="Texture2D" uid="uid://ugfl61lu48bt" path="res://aassets/dimari/fideia.jpg" id="3_qpmkf"]
 
 [node name="MenuSeleccion" type="Control" unique_id=2133260971]
 layout_mode = 3
@@ -15,18 +17,35 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_4hfja")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=180434854]
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 0.98700005
-anchor_bottom = 0.95000005
-offset_left = 2.0
-offset_right = -0.088012695
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1734311457]
+layout_mode = 0
+offset_left = -472.0
+offset_top = -472.0
+offset_right = 104.0
+offset_bottom = 176.0
+texture = ExtResource("2_t5d8f")
+expand_mode = 1
 
-[node name="BotonFideo" type="Button" parent="HBoxContainer" unique_id=949590145]
-layout_mode = 2
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=1778809446]
+layout_mode = 0
+offset_left = 104.0
+offset_top = -472.0
+offset_right = 680.0
+offset_bottom = 176.0
+texture = ExtResource("3_qpmkf")
+
+[node name="BotonFideo" type="Button" parent="." unique_id=949590145]
+layout_mode = 0
+offset_left = 346.0
+offset_top = 64.0
+offset_right = 443.0
+offset_bottom = 102.0
 text = "Elegir Fideo"
 
-[node name="BotonParedes" type="Button" parent="HBoxContainer" unique_id=998567489]
-layout_mode = 2
+[node name="BotonParedes" type="Button" parent="." unique_id=998567489]
+layout_mode = 0
+offset_left = -264.0
+offset_top = 64.0
+offset_right = -146.0
+offset_bottom = 102.0
 text = "Elegir Paredes"

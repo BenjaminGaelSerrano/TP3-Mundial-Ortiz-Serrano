@@ -5,14 +5,14 @@ var paredes_escena=preload("res://Scenes/Paredes.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	$HBoxContainer/BotonFideo.pressed.connect(_on_fideo_selected)
-	$HBoxContainer/BotonParedes.pressed.connect(_on_paredes_selected)
+	$BotonFideo.pressed.connect(_on_fideo_selected)
+	$BotonParedes.pressed.connect(_on_paredes_selected)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
-	
+		
 func _on_fideo_selected() -> void:
 	Global.jugador_seleccionado = fideo_escena
 	arrancar_nivel()

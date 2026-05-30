@@ -7,6 +7,7 @@
 
 [node name="pañuelo1" type="Area2D" unique_id=1875602740]
 script = ExtResource("1_0f2w7")
+distancia_maxima = 40.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2008663868]
 shape = SubResource("CircleShape2D_q2mmt")
