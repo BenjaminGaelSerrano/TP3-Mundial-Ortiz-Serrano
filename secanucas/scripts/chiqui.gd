@@ -81,11 +81,12 @@ func tirarChori():
 	elif direccion == Vector2.LEFT :
 		animacion.play("AtacarIzquierda")
 func morir():
-	get_tree().change_scene_to_file("res://Scenes/menu_ganar.tscn")
+	
 	estadoTapia = estado.MUERTO
 	velocity = Vector2.ZERO
 	animacion.play("Muerte")
 	await animacion.animation_finished
+	get_tree().current_scene.get_node("MenuGanar").activar_game_ganado()
 	queue_free()
 func animacionCaminar():
 	if direccion == Vector2.UP :

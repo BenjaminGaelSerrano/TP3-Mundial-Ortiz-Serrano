@@ -52,8 +52,8 @@ func recibir_daño(dañorecibido: int) -> void:
 	vidas-=dañorecibido
 	vida_cambiada.emit(vidas)
 	if vidas<=0:
-		get_tree().change_scene_to_file("res://Scenes/menu_perdido.tscn")
 		print("me empache de choris ")
+		get_tree().current_scene.get_node("MenuPerdido").activar_game_over()
 		queue_free()
 
 func _input(event: InputEvent) -> void:

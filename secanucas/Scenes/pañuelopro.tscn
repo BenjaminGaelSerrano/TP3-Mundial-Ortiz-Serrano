@@ -8,8 +8,8 @@
 [node name="pañuelopro" type="Area2D" unique_id=1875602740]
 collision_mask = 5
 script = ExtResource("1_pxdax")
-distancia_maxima = 47.0
-multiplicador = 1.2
+distancia_maxima = 60.0
+multiplicador = 2.505
 usos_maximos = 6
 tiempo_secado = 1.8
 

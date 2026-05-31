@@ -6,8 +6,10 @@
 [ext_resource type="PackedScene" uid="uid://nxlxg2rv84a0" path="res://Scenes/chiqui.tscn" id="3_hwnlj"]
 [ext_resource type="PackedScene" uid="uid://bm40wrv3eeein" path="res://Scenes/item_pañuelo.tscn" id="3_jmhww"]
 [ext_resource type="PackedScene" uid="uid://det28s1inbqeq" path="res://Scenes/pañuelo_1.tscn" id="4_22i05"]
-[ext_resource type="PackedScene" path="res://Scenes/hud.tscn" id="4_kyajb"]
-[ext_resource type="PackedScene" path="res://Scenes/menu_pausa.tscn" id="8_kyajb"]
+[ext_resource type="PackedScene" uid="uid://dbuervyixhvuq" path="res://Scenes/hud.tscn" id="4_kyajb"]
+[ext_resource type="PackedScene" uid="uid://dompip20fde0u" path="res://Scenes/menu_pausa.tscn" id="8_kyajb"]
+[ext_resource type="PackedScene" uid="uid://cukg6ktceivo5" path="res://Scenes/menu_perdido.tscn" id="9_ql53f"]
+[ext_resource type="PackedScene" uid="uid://vcm02rgsvh4t" path="res://Scenes/menu_ganar.tscn" id="10_xvap8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_eciuy"]
 texture = ExtResource("1_ecx5m")
@@ -1726,7 +1728,7 @@ position = Vector2(67, 371)
 position = Vector2(665, 280)
 
 [node name="Timerpanuelo" type="Timer" parent="." unique_id=1702462214]
-wait_time = 13.808
+wait_time = 55.0
 one_shot = true
 autostart = true
 
@@ -1734,4 +1736,10 @@ autostart = true
 position = Vector2(920, 480)
 
 [node name="MenuPausa" parent="." unique_id=2015048907 instance=ExtResource("8_kyajb")]
+process_mode = 3
+
+[node name="MenuPerdido" parent="." unique_id=1956812636 instance=ExtResource("9_ql53f")]
+process_mode = 3
+
+[node name="MenuGanar" parent="." unique_id=645093260 instance=ExtResource("10_xvap8")]
 process_mode = 3
