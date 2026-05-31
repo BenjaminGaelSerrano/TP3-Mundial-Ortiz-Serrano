@@ -1,9 +1,6 @@
 extends CharacterBody2D
 class_name JugadorBase
 @export var escenapañuelo:PackedScene
-#const SPEED = 300.0
-#const JUMP_VELOCITY = -400.0
-
 signal vida_cambiada(nueva_vida: int)
 @export var vida_maxima: int=5
 @onready var vidas: int=vida_maxima
@@ -55,8 +52,7 @@ func recibir_daño(dañorecibido: int) -> void:
 	vidas-=dañorecibido
 	vida_cambiada.emit(vidas)
 	if vidas<=0:
-		#por ahora no hay escena de muerte
-		#get_tree().change_scene_to_file("res://escenas/muerte.tscn")
+		get_tree().change_scene_to_file("res://Scenes/menu_perdido.tscn")
 		print("me empache de choris ")
 		queue_free()
 

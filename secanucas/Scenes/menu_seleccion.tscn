@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://45sokcqyctus"]
 
 [ext_resource type="Script" path="res://scripts/menu_seleccion.gd" id="1_4hfja"]
-[ext_resource type="Texture2D" uid="uid://bt8qdmrn22g4w" path="res://aassets/ChatGPT Image 31 may 2026, 12_58_23 a.m..png" id="2_t5d8f"]
-[ext_resource type="Texture2D" uid="uid://daty3fj3yamyp" path="res://aassets/ChatGPT Image 31 may 2026, 12_58_12 a.m..png" id="3_qpmkf"]
+[ext_resource type="Texture2D" uid="uid://rl5l0cq255x0" path="res://aassets/secanucas4.png" id="2_t5d8f"]
+[ext_resource type="Texture2D" uid="uid://kgwr6w6x6fvx" path="res://aassets/secanucas2.png" id="3_qpmkf"]
 
 [node name="MenuSeleccion" type="Control" unique_id=2133260971]
 layout_mode = 3

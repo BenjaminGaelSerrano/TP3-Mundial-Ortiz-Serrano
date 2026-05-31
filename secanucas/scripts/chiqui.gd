@@ -49,13 +49,17 @@ func _physics_process(delta: float) -> void:
 			timer=randf_range(3.5, 12.0)
 	elif estadoTapia == estado.PERSEGUIR:
 		if jugador!= null:
+			var distancia = global_position.distance_to(jugador.global_position)
 			var dirLibre=(jugador.global_position - global_position).normalized()
 			if abs(dirLibre.x) > abs(dirLibre.y):
 				direccion = Vector2(sign(dirLibre.x), 0)
 			else:
 				direccion = Vector2(0, sign(dirLibre.y))
-			esquivarParedes()	
-			velocity= direccion * (velocidad*1.2)
+			esquivarParedes()
+			if distancia > 80:	
+				velocity= direccion * (velocidad*1.2)
+			else:
+				velocity = Vector2.ZERO	
 			move_and_slide()
 			choripanCooldown-=delta
 			if choripanCooldown<=0:
@@ -77,6 +81,7 @@ func tirarChori():
 	elif direccion == Vector2.LEFT :
 		animacion.play("AtacarIzquierda")
 func morir():
+	get_tree().change_scene_to_file("res://Scenes/menu_ganar.tscn")
 	estadoTapia = estado.MUERTO
 	velocity = Vector2.ZERO
 	animacion.play("Muerte")
@@ -125,6 +130,9 @@ func recibir_daño(danio: int) -> void:
 		
 func _on_vigilancia_area_body_entered(body: Node2D) -> void:
 	if body.is_in_group("jugadores"):
+		var distancia = global_position.distance_to(body.global_position)
+		if distancia < 30:
+			return
 		$ComprobadorParedDelanteJugador.target_position = to_local(body.global_position)
 		$ComprobadorParedDelanteJugador.force_raycast_update()
 		if not $ComprobadorParedDelanteJugador.is_colliding():

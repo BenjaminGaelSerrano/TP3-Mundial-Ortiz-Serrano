@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ce2co2uke3tv3"
-path="res://.godot/imported/Game-UI-Health-Bar-Transparent.png-c46c7ef4b3d34d2b81641c6ec845ffcd.ctex"
+uid="uid://dcqjodc7rwqr0"
+path="res://.godot/imported/secanucas10.png-25084a1ec6caada26e819f0cf95b67fc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://aassets/Game-UI-Health-Bar-Transparent.png"
-dest_files=["res://.godot/imported/Game-UI-Health-Bar-Transparent.png-c46c7ef4b3d34d2b81641c6ec845ffcd.ctex"]
+source_file="res://aassets/secanucas10.png"
+dest_files=["res://.godot/imported/secanucas10.png-25084a1ec6caada26e819f0cf95b67fc.ctex"]
 
 [params]
 
