@@ -6,7 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://nxlxg2rv84a0" path="res://Scenes/chiqui.tscn" id="3_hwnlj"]
 [ext_resource type="PackedScene" uid="uid://bm40wrv3eeein" path="res://Scenes/item_pañuelo.tscn" id="3_jmhww"]
 [ext_resource type="PackedScene" uid="uid://det28s1inbqeq" path="res://Scenes/pañuelo_1.tscn" id="4_22i05"]
-[ext_resource type="PackedScene" path="res://Scenes/hud.tscn" id="4_kyajb"]
+[ext_resource type="PackedScene" uid="uid://dbuervyixhvuq" path="res://Scenes/hud.tscn" id="4_kyajb"]
+[ext_resource type="PackedScene" uid="uid://dompip20fde0u" path="res://Scenes/menu_pausa.tscn" id="8_kyajb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_eciuy"]
 texture = ExtResource("1_ecx5m")
@@ -1731,3 +1732,6 @@ autostart = true
 
 [node name="Spawn" type="Marker2D" parent="." unique_id=1751135394]
 position = Vector2(920, 480)
+
+[node name="MenuPausa" parent="." unique_id=2015048907 instance=ExtResource("8_kyajb")]
+process_mode = 3
