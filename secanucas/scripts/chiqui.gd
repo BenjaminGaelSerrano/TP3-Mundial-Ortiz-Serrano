@@ -54,6 +54,7 @@ func _physics_process(delta: float) -> void:
 				direccion = Vector2(sign(dirLibre.x), 0)
 			else:
 				direccion = Vector2(0, sign(dirLibre.y))
+			esquivarParedes()	
 			velocity= direccion * (velocidad*1.2)
 			move_and_slide()
 			choripanCooldown-=delta
@@ -124,10 +125,13 @@ func recibir_daño(danio: int) -> void:
 		
 func _on_vigilancia_area_body_entered(body: Node2D) -> void:
 	if body.is_in_group("jugadores"):
-		poligono.color = colorVigilanciaAlerta
-		estadoTapia=estado.PERSEGUIR
-		jugador=body
-		choripanCooldown = 1.0 
+		$ComprobadorParedDelanteJugador.target_position = to_local(body.global_position)
+		$ComprobadorParedDelanteJugador.force_raycast_update()
+		if not $ComprobadorParedDelanteJugador.is_colliding():
+			poligono.color = colorVigilanciaAlerta
+			estadoTapia=estado.PERSEGUIR
+			jugador=body
+			choripanCooldown = 1.0 
 func _on_vigilancia_area_body_exited(body: Node2D) -> void:
 	if body.is_in_group("jugadores"): 
 		poligono.color = colorVigilanciaNormal

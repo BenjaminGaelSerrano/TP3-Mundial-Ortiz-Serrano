@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://0uu45bd7dygc"]
+[gd_scene format=3 uid="uid://copdtk4ifr6o6"]
 
 [ext_resource type="Script" uid="uid://dilpt0gvjhrxg" path="res://scripts/pañuelo.gd" id="1_pxdax"]
 [ext_resource type="Texture2D" uid="uid://nor1qnlc8w7k" path="res://aassets/items/pañuelo2.png" id="2_pxdax"]
@@ -6,6 +6,7 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_q2mmt"]
 
 [node name="pañuelopro" type="Area2D" unique_id=1875602740]
+collision_mask = 5
 script = ExtResource("1_pxdax")
 distancia_maxima = 47.0
 multiplicador = 1.2

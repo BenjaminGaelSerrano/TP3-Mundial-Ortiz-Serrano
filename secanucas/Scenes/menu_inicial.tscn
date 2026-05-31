@@ -1,7 +1,7 @@
-[gd_scene format=3 uid="uid://cok0c6t8ag2an"]
+[gd_scene format=3 uid="uid://dxuc172bxks0h"]
 
-[ext_resource type="Script" uid="uid://dgmv88bidwnbp" path="res://menu_inicial.gd" id="1_r68fw"]
-[ext_resource type="Texture2D" uid="uid://c7sw0oy6cdj8r" path="res://aassets/chiqui/elchiquitapia.jpg" id="2_envsn"]
+[ext_resource type="Script" path="res://menu_inicial.gd" id="1_r68fw"]
+[ext_resource type="Texture2D" uid="uid://77nb6vndom10" path="res://aassets/ChatGPT Image 31 may 2026, 12_58_05 a.m..png" id="2_r68fw"]
 
 [node name="MenuInicial" type="Control" unique_id=1170274366]
 layout_mode = 3
@@ -23,7 +23,7 @@ offset_right = 24.0
 offset_bottom = 13.5
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_envsn")
+texture = ExtResource("2_r68fw")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=660532719]
 layout_mode = 0
@@ -32,10 +32,6 @@ offset_top = 64.0
 offset_right = 768.0
 offset_bottom = 576.0
 alignment = 1
-
-[node name="Label" type="Label" parent="VBoxContainer" unique_id=454952890]
-layout_mode = 2
-text = "Uvita fernandez para el gol ahi estaaaaaaaaaaaaa"
 
 [node name="jugar" type="Button" parent="VBoxContainer" unique_id=1694848755]
 layout_mode = 2

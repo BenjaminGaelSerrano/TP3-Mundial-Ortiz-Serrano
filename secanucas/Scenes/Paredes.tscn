@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://c38ddxon6dtxu"]
+[gd_scene format=3 uid="uid://bl0xwh71xydve"]
 
 [ext_resource type="Script" uid="uid://hpas43gwm4s3" path="res://scripts/secanucas.gd" id="1_8bslg"]
 [ext_resource type="Texture2D" uid="uid://dx3dfx8y6xwhh" path="res://aassets/parede/test.png" id="2_8bslg"]
@@ -670,8 +670,8 @@ collision_layer = 2
 collision_mask = 5
 script = ExtResource("1_8bslg")
 vida_maxima = 6
-velocidad = 100.0
-"daño" = 15
+velocidad = 180.0
+"daño" = 25
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=439949681]
 position = Vector2(2, 0)

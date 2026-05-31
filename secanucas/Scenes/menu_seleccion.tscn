@@ -1,8 +1,8 @@
-[gd_scene format=3 uid="uid://dw1f5h83ra543"]
+[gd_scene format=3 uid="uid://45sokcqyctus"]
 
-[ext_resource type="Script" uid="uid://b8v1ncavo00ca" path="res://scripts/menu_seleccion.gd" id="1_4hfja"]
-[ext_resource type="Texture2D" uid="uid://bqfd5y3ktd88b" path="res://aassets/parede/14972840625600369804.jpg" id="2_t5d8f"]
-[ext_resource type="Texture2D" uid="uid://ugfl61lu48bt" path="res://aassets/dimari/fideia.jpg" id="3_qpmkf"]
+[ext_resource type="Script" path="res://scripts/menu_seleccion.gd" id="1_4hfja"]
+[ext_resource type="Texture2D" uid="uid://bt8qdmrn22g4w" path="res://aassets/ChatGPT Image 31 may 2026, 12_58_23 a.m..png" id="2_t5d8f"]
+[ext_resource type="Texture2D" uid="uid://daty3fj3yamyp" path="res://aassets/ChatGPT Image 31 may 2026, 12_58_12 a.m..png" id="3_qpmkf"]
 
 [node name="MenuSeleccion" type="Control" unique_id=2133260971]
 layout_mode = 3
@@ -33,6 +33,7 @@ offset_top = -472.0
 offset_right = 680.0
 offset_bottom = 176.0
 texture = ExtResource("3_qpmkf")
+expand_mode = 1
 
 [node name="BotonFideo" type="Button" parent="." unique_id=949590145]
 layout_mode = 0
