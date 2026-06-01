@@ -338,6 +338,30 @@ region = Rect2(55, 219, 55, 53)
 atlas = ExtResource("2_8bslg")
 region = Rect2(0, 219, 55, 53)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_qd6wf"]
+atlas = ExtResource("2_8bslg")
+region = Rect2(0, 484, 55, 53)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bccfj"]
+atlas = ExtResource("2_8bslg")
+region = Rect2(55, 484, 55, 53)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ed673"]
+atlas = ExtResource("2_8bslg")
+region = Rect2(110, 484, 55, 53)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ge6bl"]
+atlas = ExtResource("2_8bslg")
+region = Rect2(165, 431, 55, 53)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hw7cq"]
+atlas = ExtResource("2_8bslg")
+region = Rect2(220, 484, 55, 53)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a1gvn"]
+atlas = ExtResource("2_8bslg")
+region = Rect2(275, 484, 55, 53)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_us8o8"]
 animations = [{
 "frames": [{
@@ -659,7 +683,25 @@ animations = [{
 "name": &"parado_izquierda",
 "speed": 20.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qd6wf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bccfj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ed673")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ge6bl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hw7cq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a1gvn")
+}],
 "loop": true,
 "name": &"secar",
 "speed": 5.0
@@ -681,4 +723,4 @@ shape = SubResource("RectangleShape2D_grh7v")
 position = Vector2(0, -1.9073486e-06)
 scale = Vector2(1.1369386, 1.0453664)
 sprite_frames = SubResource("SpriteFrames_us8o8")
-animation = &"muerte"
+animation = &"secar"
