@@ -2,6 +2,9 @@
 trabajo practico de metodologia de desarrollo de videojuegos, temática mundial.
 un juego de sigilo en el que el objetivo es secarle la nuca al chiqui (quien va a tener una barra de sudor) cuando se da vuelta y no estes en su rango de vision. Ahi te vas a poder acercar y tocar una tecla para secarle la nuca y bajarle la vida, si se da vuelta y te ve, te va a atacar con un pañuelo mojado y sacarte vida. Vas a tener que ocultarte y buscar el momento mas oportuno para secarle la nuca. El juego comtará con dos personajes jugables: Leandro Paredes y Angel Di María, Paredes hace más daño y Di María tiene más vida. El objetivo es secarle la nuca al chiqui hasta dejarsela seca
 
+# Aclaracion 
+copilot aparece como colaborador por los merges entre los pull request de las ramas features y bugs con la rama main, para resolver conflictos entre archivos imports y imagenes. 
+
 # Guía de Flujo de Trabajo en Git
 
 Para mantener el proyecto ordenado y evitar conflictos, vamos a usar un flujo de trabajo basado en **Feature Branches** (Ramas por Tarea). 
